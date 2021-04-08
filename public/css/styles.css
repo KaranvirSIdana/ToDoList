@@ -27,7 +27,7 @@ h1 {
   min-height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #F1F1F1;
+  border-bottom: 1px solid black;
 }
 
 .item:last-child {
@@ -36,7 +36,7 @@ h1 {
 
 input:checked+p {
   text-decoration: line-through;
-  text-decoration-color: #A683E3;
+  text-decoration-color: #ff2e63;
 }
 
 input[type="checkbox"] {
@@ -48,7 +48,7 @@ p {
   padding: 20px;
   font-size: 20px;
   font-weight: 200;
-  color: white;
+  color: black;
 }
 
 form {
