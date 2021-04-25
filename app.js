@@ -3,8 +3,10 @@ const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const dotenv = require("dotenv")
 
 const app = express();
+dotenv.config()
 
 app.set('view engine', 'ejs');//For Embedding Ejs
 app.use(express.static("public"));//For accessing static files
@@ -15,7 +17,9 @@ app.use(bodyParser.urlencoded({//For incorporating Body Parser
 
 mongoose.set('useFindAndModify', false);
 // FOr connecting the mongodb Server through Moongoose
-mongoose.connect("mongodb+srv://admin-Karanvir:scoobydooby$38@cluster0.ura5d.mongodb.net/todolistDB", {
+const connectionString= "mongodb+srv://"+process.env.DB_USERNAME+":"+process.env.DB_PASSWORD+"@cluster0.ura5d.mongodb.net/todolistDB";
+
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
